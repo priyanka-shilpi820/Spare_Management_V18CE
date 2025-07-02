@@ -11,6 +11,7 @@
         'views/vehicle_view.xml',
         'wizard/add_excisting_products_wizard.xml',
         "views/spare_part.xml",
+        'views/vehicle_model_view.xml',
         "views/menu.xml"
     ],
     'installable': True,

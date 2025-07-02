@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Vehicle Type Form -->
+    <record id="view_vehicle_type_form" model="ir.ui.view">
+        <field name="name">vehicle.type.form</field>
+        <field name="model">vehicle.type</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vehicle Make Form -->
+    <record id="view_vehicle_make_form" model="ir.ui.view">
+        <field name="name">vehicle.make.form</field>
+        <field name="model">vehicle.make</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vehicle Model Form -->
+    <record id="view_vehicle_year_form" model="ir.ui.view">
+        <field name="name">vehicle.model.form</field>
+        <field name="model">vehicle.year</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vehicle Model Form -->
+    <record id="view_vehicle_model_form" model="ir.ui.view">
+        <field name="name">vehicle.model.form</field>
+        <field name="model">vehicle.model</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="make_id"/>
+                        <field name="type_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+     <!-- Actions -->
+    <record id="action_vehicle_type" model="ir.actions.act_window">
+        <field name="name">Vehicle Types</field>
+        <field name="res_model">vehicle.type</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_vehicle_make" model="ir.actions.act_window">
+        <field name="name">Vehicle Makes</field>
+        <field name="res_model">vehicle.make</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+     <record id="action_vehicle_year" model="ir.actions.act_window">
+        <field name="name">Vehicle years</field>
+        <field name="res_model">vehicle.year</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_vehicle_model" model="ir.actions.act_window">
+        <field name="name">Vehicle Models</field>
+        <field name="res_model">vehicle.model</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+</odoo>
+
+
