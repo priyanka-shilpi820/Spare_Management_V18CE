@@ -4,7 +4,7 @@
 
 
     <menuitem id="menu_vehicle_conf" name="configuration" parent="menu_vehicle_root"/>
-    <menuitem id="menu_vehicle" name="vehicle" parent="menu_vehicle_root" action="action_vehicle_info"/>
+    <menuitem id="menu_vehicle" name="vehicle" parent="menu_vehicle_root" action="action_spare_part_vehicle"/>
 
       <menuitem id="menu_spare" name="Spare Parts" parent="menu_vehicle_root"
               action="action_spare_parts"/>

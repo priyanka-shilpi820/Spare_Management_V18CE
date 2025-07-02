@@ -8,7 +8,7 @@ class Spare(models.Model):
     part_number = fields.Char(string='CODE', required=True)
     part_name = fields.Char(string='Part Name')
     description = fields.Char(string='Description')
-    model_name = fields.Many2one("vehicle.info", "Vehicle")
+    model_name = fields.Many2one("vehicle.information", "Vehicle")
     unit_of_measure = fields.Integer("UOM")
     cost_price = fields.Integer("Cost Price")
     sale_price = fields.Integer("Sales Price")
@@ -25,6 +25,6 @@ class ProductVehicle(models.Model):
     _name = "product.vehicle"
     product_id = fields.Many2one("product.template", string="Product")
     # makes = fields.Many2one("vehicle.info", string="Make")
-    models = fields.Many2one("vehicle.info",string="Model")
+    models = fields.Many2one("vehicle.information",string="Model")
     start_year = fields.Integer(string="Start year")
     end_year = fields.Integer(string="End year")

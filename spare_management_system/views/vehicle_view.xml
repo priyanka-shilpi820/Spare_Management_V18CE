@@ -1,66 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
-    <record id="view_vehicle_info_list" model="ir.ui.view">
-        <field name="name">vehicle.info.list</field>
-        <field name="model">vehicle.info</field>
+    <record id="view_spare_part_vehicle_form" model="ir.ui.view">
+        <field name="model">vehicle.information</field>
         <field name="arch" type="xml">
-            <list>
-
-                <field name="model_name"/>
-                <field name="manufacturer_id"/>
-                <field name="year"/>
-
-            </list>
-        </field>
-    </record>
-
-
-    <record id="view_vehicle_info_form" model="ir.ui.view">
-        <field name="name">vehicle.info.form</field>
-        <field name="model">vehicle.info</field>
-        <field name="arch" type="xml">
-            <form>
+            <form string="Vehicles">
                 <sheet>
                     <group>
-                        <field name="model_name" string="Model"/>
-                        <field name="manufacturer_id" string="Manufacturer"/>
-                        <field name="engine_variant" string="Engine"/>
+                        <group>
+                            <field name="name"/>
+                            <field name="make"/>
+                            <field name="model_name"/>
+
+                        </group>
+                        <group>
+                            <field name="type"/>
+                            <field name="model_year"/>
+                        </group>
                     </group>
-
                     <notebook>
-                        <page string="Information">
-                            <group>
-                                <field name="year"/>
-
-                            </group>
-                        </page>
-
-
-                        <page string="Products">
-                            <button name="action_add_existing_products"
-                                    type="object"
-                                    string="Add"
-                                    icon="fa-plus"
-                                    class="btn btn-primary"/>
-                            <field name="product_ids">
+                        <page string="order lines">
+                            <field name="order_lines">
                                 <list editable="bottom">
-                                    <!--                                    <field name="name"/>-->
-                                    <!--                                    <field name="default_code"/>-->
-                                    <!--                                    <field name="list_price"/>-->
-                                    <field name="type"/>
+                                    <field name="product_id"/>
+                                    <field name="quantity"/>
+                                    <field name="unit_price"/>
+                                    <field name="total"/>
                                 </list>
+                                <form>
+                                    <field name="product_id"/>
+                                    <field name="quantity"/>
+                                    <field name="unit_price"/>
+                                    <field name="total"/>
+                                </form>
                             </field>
                         </page>
                     </notebook>
                 </sheet>
+                <chatter/>
             </form>
         </field>
     </record>
 
-    <record id="action_vehicle_info" model="ir.actions.act_window">
+
+    <record id="view_spare_part_vehicle_list" model="ir.ui.view">
         <field name="name">Vehicles</field>
-        <field name="res_model">vehicle.info</field>
-        <field name="view_mode">list,form</field>
+        <field name="model">vehicle.information</field>
+        <field name="arch" type="xml">
+            <list string="Brand">
+                <field name="name" optional="show"/>
+                <field name="type" optional="show"/>
+                <field name="make" optional="show"/>
+                <field name="model_name" optional="show"/>
+                <field name="model_year" optional="show"/>
+            </list>
+        </field>
     </record>
 
+    <record id="view_spare_part_vehicle_filter" model="ir.ui.view">
+        <field name="name">Vehicles</field>
+        <field name="model">vehicle.information</field>
+        <field name="arch" type="xml">
+            <search string="vehicle search">
+                <filter string="Type" name="filter_type" domain="[]"
+                        context="{'group_by':'type'}"/>
+                <filter string="Make" name="filter_make" domain="[]"
+                        context="{'group_by':'make'}"/>
+                <filter string="Model" name="filter_model_name" domain="[]"
+                        context="{'group_by':'model_name'}"/>
+                <filter string="Year" name="filter_model_year" domain="[]"
+                        context="{'group_by':'model_year'}"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_spare_part_vehicle" model="ir.actions.act_window">
+        <field name="name">Vehicles</field>
+        <field name="res_model">vehicle.information</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_id" ref="view_spare_part_vehicle_list"/>
+    </record>
 </odoo>
