@@ -1,0 +1,66 @@
+<odoo>
+
+    <record id="view_vehicle_info_list" model="ir.ui.view">
+        <field name="name">vehicle.info.list</field>
+        <field name="model">vehicle.info</field>
+        <field name="arch" type="xml">
+            <list>
+
+                <field name="model_name"/>
+                <field name="manufacturer_id"/>
+                <field name="year"/>
+
+            </list>
+        </field>
+    </record>
+
+
+    <record id="view_vehicle_info_form" model="ir.ui.view">
+        <field name="name">vehicle.info.form</field>
+        <field name="model">vehicle.info</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="model_name" string="Model"/>
+                        <field name="manufacturer_id" string="Manufacturer"/>
+                        <field name="engine_variant" string="Engine"/>
+                    </group>
+
+                    <notebook>
+                        <page string="Information">
+                            <group>
+                                <field name="year"/>
+
+                            </group>
+                        </page>
+
+
+                        <page string="Products">
+                            <button name="action_add_existing_products"
+                                    type="object"
+                                    string="Add"
+                                    icon="fa-plus"
+                                    class="btn btn-primary"/>
+                            <field name="product_ids">
+                                <list editable="bottom">
+                                    <!--                                    <field name="name"/>-->
+                                    <!--                                    <field name="default_code"/>-->
+                                    <!--                                    <field name="list_price"/>-->
+                                    <field name="type"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_vehicle_info" model="ir.actions.act_window">
+        <field name="name">Vehicles</field>
+        <field name="res_model">vehicle.info</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+</odoo>

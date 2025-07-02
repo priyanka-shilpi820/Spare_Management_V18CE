@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="menu_vehicle_root" name="Vehicle Management"/>
+
+
+    <menuitem id="menu_vehicle_conf" name="configuration" parent="menu_vehicle_root"/>
+    <menuitem id="menu_vehicle" name="vehicle" parent="menu_vehicle_root" action="action_vehicle_info"/>
+
+      <menuitem id="menu_spare" name="Spare Parts" parent="menu_vehicle_root"
+              action="action_spare_parts"/>
+    <menuitem id="menu_vehicle_info" name="manufacturer" parent="menu_vehicle_conf"
+              action="action_vehicle_manufacturer"/>
+
+</odoo>
