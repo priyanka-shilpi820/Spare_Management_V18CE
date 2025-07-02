@@ -6,6 +6,12 @@
     <menuitem id="menu_vehicle_conf" name="configuration" parent="menu_vehicle_root"/>
     <menuitem id="menu_vehicle" name="vehicle" parent="menu_vehicle_root" action="action_vehicle_info"/>
 
+
+         <menuitem id="menu_vehicle_type" name="Types" parent="menu_vehicle_conf" action="action_vehicle_type"/>
+    <menuitem id="menu_vehicle_make" name="Makes" parent="menu_vehicle_conf" action="action_vehicle_make"/>
+    <menuitem id="menu_vehicle_year" name="years" parent="menu_vehicle_conf" action="action_vehicle_year"/>
+    <menuitem id="menu_vehicle_model" name="Models" parent="menu_vehicle_conf" action="action_vehicle_model"/>
+
       <menuitem id="menu_spare" name="Spare Parts" parent="menu_vehicle_root"
               action="action_spare_parts"/>
     <menuitem id="menu_vehicle_info" name="manufacturer" parent="menu_vehicle_conf"
