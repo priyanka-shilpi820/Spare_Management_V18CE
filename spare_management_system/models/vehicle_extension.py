@@ -24,7 +24,7 @@ class VehicleModel(models.Model):
 
 class VehicleYear(models.Model):
     _name = 'vehicle.year'
-    _description = 'Vehicle Make'
+    _description = 'Vehicle year'
 
     name = fields.Char(required=True)
 
