@@ -1,29 +1,32 @@
 from odoo import models, fields
 
 
-class Vehicle(models.Model):
-    _name = 'vehicle.info'
-    _description = 'Vehicle Information'
-    _rec_name='model_name'
+class VehicleInformation(models.Model):
+    _name = 'vehicle.information'
+    _rec_name="name"
+    _inherit = ['mail.thread', 'mail.activity.mixin']
 
-    model_name = fields.Char(string='Model', required=True)
-    manufacturer_id = fields.Many2one('vehicle.manufacturer', string='Manufacturer', required=True)
-    year = fields.Char(string='Year')
-    engine_variant = fields.Char(string='Engine / Variant')
-    product_ids = fields.One2many(
-        'product.template',
-        'vehicle_model_id',
-        string='Products'
-    )
 
-    def action_add_existing_products(self):
-        return {
-            'type': 'ir.actions.act_window',
-            'name': 'Add Existing Products',
-            'res_model': 'add.products.wizard',
-            'view_mode': 'form',
-            'target': 'new',
-            'context': {
-                'default_vehicle_id': self.id,
-            }
-        }
+    name=fields.Char("Vehicle Name",requied="True")
+    type=fields.Many2one("vehicle.type","Vehicle Type")
+    make=fields.Many2one("vehicle.make","Make")
+    model_name=fields.Many2one("vehicle.model","Model")
+    model_year=fields.Many2one("vehicle.year","Year")
+    order_lines = fields.One2many("vehicle.order.lines", "vehicle", "Order lines")
+
+
+
+class VehicleorderLines(models.Model):
+    _name="vehicle.order.lines"
+
+
+    product_id=fields.Many2one("product.product","product Name")
+    quantity=fields.Integer("qty")
+    unit_price=fields.Float("Unitprice")
+    vehicle=fields.Many2one("vehicle.information","Vehicle")
+    total = fields.Integer("subtotal",compute="compute_sub_total")
+
+    def compute_sub_total(self):
+        for rec in self:
+            rec.total=rec.quantity * rec.unit_price
+
