@@ -8,10 +8,10 @@ class VehicleInformation(models.Model):
 
 
     name=fields.Char("Vehicle Name",requied=True)
-    type=fields.Many2one("vehicle.type","Vehicle Type")
-    make=fields.Many2one("vehicle.make","Make")
-    model_name=fields.Many2one("vehicle.model","Model")
-    model_year=fields.Many2one("vehicle.year","Year")
+    type=fields.Many2one("vehicle.type","Vehicle Type",required=True)
+    make=fields.Many2one("vehicle.make","Make",required=True)
+    model_name=fields.Many2one("vehicle.model","Model",required=True)
+    model_year=fields.Many2one("vehicle.year","Year",required=True)
     order_lines = fields.One2many("vehicle.order.lines", "vehicle", "Order lines")
     product_id=fields.Many2one('product.product',string='product')
 
