@@ -11,6 +11,8 @@
         'views/vehicle_view.xml',
         "views/spare_part.xml",
         'views/vehicle_model_view.xml',
+        'views/brand_view.xml',
+        'views/product_product_vehicle_view.xml',
         "views/menu.xml"
     ],
     'installable': True,

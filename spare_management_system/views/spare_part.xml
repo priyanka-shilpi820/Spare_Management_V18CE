@@ -22,28 +22,19 @@
         <field name="inherit_id" ref="product.product_template_only_form_view"/>
 
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='name']" position="after">
-                <group>
-                    <field name="part_number"/>
-                    <!--                        <field name="part_name"/>-->
-                    <field name="description"/>
-                    <field name="brand"/>
-                    <field name="model_name"/>
-                </group>
-            </xpath>
-            <xpath expr="//notebook/page[@name='purchase']" position="after">
+            <xpath expr="//field[@name='barcode']" position="after">
 
-                <page string="Common Vehicles">
-                    <field name="vehicle_ids">
-                        <list editable="bottom">
-                            <!--            <field name="makes"/>-->
-                            <field name="models"/>
-                            <field name="start_year"/>
-                            <field name="end_year"/>
-                        </list>
-                    </field>
-                </page>
+
+                    <field name="whole_sale_price"/>
+                    <field name="brand_id"/>
+
+                    <!--                        <field name="part_name"/>-->
+<!--                    <field name="description"/>-->
+<!--                    <field name="brand"/>-->
+<!--                    <field name="model_name"/>-->
+
             </xpath>
+
         </field>
 
     </record>

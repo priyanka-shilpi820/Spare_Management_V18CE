@@ -28,3 +28,10 @@ class VehicleYear(models.Model):
 
     name = fields.Char(required=True)
 
+
+class ProductBrand(models.Model):
+    _name = 'product.brand'
+    _description = 'Spare Part Brand'
+
+    name = fields.Char(required=True,string='brand')
+
