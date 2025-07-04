@@ -21,6 +21,7 @@ class Spare(models.Model):
         inverse_name="product_id",
         string="Common Products"
     )
+
 class ProductVehicle(models.Model):
     _name = "product.vehicle"
     product_id = fields.Many2one("product.template", string="Product")

@@ -27,4 +27,3 @@ class VehicleYear(models.Model):
     _description = 'Vehicle year'
 
     name = fields.Char(required=True)
-

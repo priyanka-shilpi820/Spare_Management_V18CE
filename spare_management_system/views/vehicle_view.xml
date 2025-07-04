@@ -14,7 +14,9 @@
                         </group>
                         <group>
                             <field name="type"/>
-                            <field name="model_year"/>
+                            <field name="model_start_year"/>
+                            <field name="model_end_year"/>
+                            <field name="engine_type"/>
                         </group>
                     </group>
                     <notebook>
@@ -51,7 +53,9 @@
                 <field name="type" optional="show"/>
                 <field name="make" optional="show"/>
                 <field name="model_name" optional="show"/>
-                <field name="model_year" optional="show"/>
+                <field name="model_start_year" optional="show"/>
+                <field name="model_end_year" optional="show"/>
+                <field name="engine_type" optional="show"/>
             </list>
         </field>
     </record>
@@ -67,8 +71,14 @@
                         context="{'group_by':'make'}"/>
                 <filter string="Model" name="filter_model_name" domain="[]"
                         context="{'group_by':'model_name'}"/>
-                <filter string="Year" name="filter_model_year" domain="[]"
-                        context="{'group_by':'model_year'}"/>
+                <filter string="Start Year" name="filter_model_start_year" domain="[]"
+                        context="{'group_by':'model_start_year'}"/>
+                <filter string="End Year" name="filter_model_end_year" domain="[]"
+                        context="{'group_by':'model_end_year'}"/>
+
+                <filter string="Engine/Variant" name="filter_engine_type" domain="[]"
+                        context="{'group_by':'engine_type'}"/>
+
             </search>
         </field>
     </record>
