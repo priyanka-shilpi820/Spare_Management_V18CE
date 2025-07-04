@@ -108,7 +108,7 @@
     </record>
 
 
-     <!-- Actions -->
+    <!-- Actions -->
     <record id="action_vehicle_type" model="ir.actions.act_window">
         <field name="name">Vehicle Types</field>
         <field name="res_model">vehicle.type</field>
