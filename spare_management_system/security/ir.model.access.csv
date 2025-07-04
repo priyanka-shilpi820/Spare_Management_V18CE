@@ -1,10 +1,10 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_product_template,access_product_template,model_product_template,,1,1,1,1
+access_product_vehicle,access_product_vehicle,model_product_vehicle,,1,1,1,1
 access_vehicle_type,access_vehicle_type,model_vehicle_type,,1,1,1,1
 access_vehicle_make,access_vehicle_make,model_vehicle_make,,1,1,1,1
 access_vehicle_model,access_vehicle_model,model_vehicle_model,,1,1,1,1
 access_vehicle_year,access_vehicle_year,model_vehicle_year,,1,1,1,1
-access_product_brand,access_product_brand,model_product_brand,,1,1,1,1
 access_vehicle_information,access_vehicle_information,model_vehicle_information,,1,1,1,1
 access_vehicle_order_lines,access_vehicle_order_lines,model_vehicle_order_lines,,1,1,1,1
 

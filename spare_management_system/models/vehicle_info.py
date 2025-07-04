@@ -1,4 +1,4 @@
-from odoo import models, fields
+from odoo import models, fields,api
 
 
 class VehicleInformation(models.Model):
@@ -7,13 +7,24 @@ class VehicleInformation(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
 
-    name=fields.Char("Vehicle Name",requied=True)
-    type=fields.Many2one("vehicle.type","Vehicle Type",required=True)
-    make=fields.Many2one("vehicle.make","Make",required=True)
-    model_name=fields.Many2one("vehicle.model","Model",required=True)
-    model_year=fields.Many2one("vehicle.year","Year",required=True)
+    name=fields.Char("Vehicle Name",requied="True")
+    type=fields.Many2one("vehicle.type","Vehicle Type")
+    make=fields.Many2one("vehicle.make","Make")
+    model_name=fields.Many2one("vehicle.model","Model")
+    model_start_year=fields.Char("Start year")
+    model_end_year=fields.Char("End year")
+    engine_type=fields.Char("Engine/Variant")
     order_lines = fields.One2many("vehicle.order.lines", "vehicle", "Order lines")
-    product_id=fields.Many2one('product.product',string='product')
+
+
+    @api.onchange('model_name')
+    def _onchange_model_name(self):
+        if self.model_name:
+            self.make = self.model_name.make_id
+            self.type = self.model_name.type_id
+
+
+
 
 
 
@@ -21,7 +32,7 @@ class VehicleorderLines(models.Model):
     _name="vehicle.order.lines"
 
 
-    product_id=fields.Many2one("product.product","product Name")
+    product_id=fields.Many2one("product.product","product Name",domain=[('','','')])
     quantity=fields.Integer("qty")
     unit_price=fields.Float("Unitprice")
     vehicle=fields.Many2one("vehicle.information","Vehicle")

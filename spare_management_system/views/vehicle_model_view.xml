@@ -63,30 +63,78 @@
         </field>
     </record>
 
+    <record id="view_spare_part_vehicle_type_list" model="ir.ui.view">
+        <field name="name">Vehicle.type.list</field>
+        <field name="model">vehicle.type</field>
+        <field name="arch" type="xml">
+            <list string="Brand">
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_spare_part_vehicle_make_list" model="ir.ui.view">
+        <field name="name">Vehicle.make.list</field>
+        <field name="model">vehicle.make</field>
+        <field name="arch" type="xml">
+            <list string="Brand">
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_spare_part_vehicle_year_list" model="ir.ui.view">
+        <field name="name">Vehicle.year.list</field>
+        <field name="model">vehicle.year</field>
+        <field name="arch" type="xml">
+            <list string="Brand">
+                <field name="name"/>
+
+            </list>
+        </field>
+    </record>
+
+    <record id="view_spare_part_vehicle_model_list" model="ir.ui.view">
+        <field name="name">Vehicle.model.list</field>
+        <field name="model">vehicle.model</field>
+        <field name="arch" type="xml">
+            <list string="Brand">
+                <field name="name"/>
+                <field name="make_id"/>
+                <field name="type_id"/>
+
+            </list>
+        </field>
+    </record>
+
 
      <!-- Actions -->
     <record id="action_vehicle_type" model="ir.actions.act_window">
         <field name="name">Vehicle Types</field>
         <field name="res_model">vehicle.type</field>
         <field name="view_mode">list,form</field>
+        <field name="view_id" ref="view_spare_part_vehicle_type_list"/>
     </record>
 
     <record id="action_vehicle_make" model="ir.actions.act_window">
         <field name="name">Vehicle Makes</field>
         <field name="res_model">vehicle.make</field>
         <field name="view_mode">list,form</field>
+        <field name="view_id" ref="view_spare_part_vehicle_make_list"/>
     </record>
 
-     <record id="action_vehicle_year" model="ir.actions.act_window">
+    <record id="action_vehicle_year" model="ir.actions.act_window">
         <field name="name">Vehicle years</field>
         <field name="res_model">vehicle.year</field>
         <field name="view_mode">list,form</field>
+        <field name="view_id" ref="view_spare_part_vehicle_year_list"/>
     </record>
 
     <record id="action_vehicle_model" model="ir.actions.act_window">
         <field name="name">Vehicle Models</field>
         <field name="res_model">vehicle.model</field>
         <field name="view_mode">list,form</field>
+        <field name="view_id" ref="view_spare_part_vehicle_model_list"/>
     </record>
 
 </odoo>
