@@ -9,3 +9,4 @@ class VehicleManufacturer(models.Model):
     start_year = fields.Integer(string="Start year")
     end_year = fields.Integer(string="End year")
 
+    end_year = fields.Integer(string="End year")
