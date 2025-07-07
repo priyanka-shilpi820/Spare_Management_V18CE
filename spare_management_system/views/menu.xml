@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <menuitem id="menu_vehicle_root" name="Vehicle Management"/>
+    <menuitem id="menu_vehicle_root" name="AutoSpare Management"/>
 
 
     <menuitem id="menu_vehicle_conf" name="configuration" parent="menu_vehicle_root" sequence="3"/>
@@ -10,11 +10,13 @@
     <menuitem id="menu_vehicle_type" name="Types" parent="menu_vehicle_conf" action="action_vehicle_type"/>
     <menuitem id="menu_vehicle_make" name="Makes" parent="menu_vehicle_conf" action="action_vehicle_make"/>
     <menuitem id="menu_vehicle_year" name="years" parent="menu_vehicle_conf" action="action_vehicle_year"/>
-    <menuitem id="menu_vehicle_brand" name="brand" parent="menu_vehicle_conf" action="action_product_brand"/>
     <menuitem id="menu_vehicle_model" name="Models" parent="menu_vehicle_conf" action="action_vehicle_model"/>
 
-    <menuitem id="menu_spare" name="Spare Parts" parent="menu_vehicle_root"
+
+    <menuitem id="menu_products" name="Products" parent="menu_vehicle_root" sequence="1"/>
+    <menuitem id="menu_spare" name="Products" parent="menu_products"
               action="action_spare_parts" sequence="1"/>
+    <menuitem id="menu_product_variants" name="product variants" parent="menu_products" action="action_product_variants" sequence="1"/>
 
 
 </odoo>

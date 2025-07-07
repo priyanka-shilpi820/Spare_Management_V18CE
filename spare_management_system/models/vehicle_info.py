@@ -7,15 +7,13 @@ class VehicleInformation(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
 
-    name=fields.Char("Vehicle Name",requied=True)
-    type=fields.Many2one("vehicle.type","Vehicle Type",requied=True)
-    make=fields.Many2one("vehicle.make","Make",requied=True)
-    model_name=fields.Many2one("vehicle.model","Model",requied=True)
-    model_year=fields.Many2one("vehicle.year", "Year", required=True)
+    name=fields.Char("Vehicle Name",requied="True")
+    type=fields.Many2one("vehicle.type","Vehicle Type")
+    make=fields.Many2one("vehicle.make","Make")
+    model_name=fields.Many2one("vehicle.model","Model")
     model_start_year=fields.Char("Start year")
     model_end_year=fields.Char("End year")
     engine_type=fields.Char("Engine/Variant")
-    product_id = fields.Many2one('product.product', string='product')
     order_lines = fields.One2many("vehicle.order.lines", "vehicle", "Order lines")
 
 
@@ -34,7 +32,7 @@ class VehicleorderLines(models.Model):
     _name="vehicle.order.lines"
 
 
-    product_id=fields.Many2one("product.product","product Name",domain=[('','','')])
+    product_id=fields.Many2one("product.product","product Name")
     quantity=fields.Integer("qty")
     unit_price=fields.Float("Unitprice")
     vehicle=fields.Many2one("vehicle.information","Vehicle")
